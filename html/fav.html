@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Favorites</title>
+    <link rel="stylesheet" href="../css/fav.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <audio id="favMusic" loop>
+        <source src="../music/The Local Train - Aalas Ka Pedh - Choo Lo (Official Audio).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="intro-container" id="introScreen">
+        <button class="music-btn" onclick="startFavorites()">
+            <span>Press me to start our favorite song 🎵</span>
+            <div class="liquid"></div>
+        </button>
+    </div>
+
+    <div class="fav-container hidden" id="favContainer">
+        <h1 class="page-title">Our Favorite Things ❤️</h1>
+        
+        <div class="grid">
+            
+            <div class="card" style="--order: 1;">
+                <div class="icon">🍔</div>
+                <h2>Food</h2>
+                <p>Biryani, Peri peri with anything & Mint Mojitos at Chargers 😋</p>
+            </div>
+
+            <div class="card" style="--order: 2;">
+                <div class="icon">🎵</div>
+                <h2>Song</h2>
+                <p>The one playing right now...</p>
+            </div>
+
+            <div class="card" style="--order: 3;">
+                <div class="icon">✈️</div>
+                <h2>Place</h2>
+                <p>Lakes and places with tasty food (meghana's)</p>
+            </div>
+
+            <div class="card" style="--order: 4;">
+                <div class="icon">🛵</div>
+                <h2>Scooty Drives</h2>
+                <p>Weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+            </div>
+
+            <div class="card" style="--order: 5;">
+                <div class="icon">😜</div>
+                <h2>Activity</h2>
+                <p>Teasing each other & Talking for hours.</p>
+            </div>
+
+            <div class="card" style="--order: 6;">
+                <div class="icon">🫂</div>
+                <h2>Person</h2>
+                <p>You are my favorite person. Forever.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="memory_lane.html" class="back-btn hidden" id="backBtn">&larr; Back to Timeline</a>
+
+    <script src="../js/fav.js"></script>
+</body>
+</html>
