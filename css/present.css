@@ -1,0 +1,109 @@
+/* --- SETUP --- */
+body {
+    margin: 0; padding: 0; height: 100vh; width: 100vw;
+    /* NEW: Romantic Gradient (Deep Plum -> Wine) */
+    background: linear-gradient(to bottom, #1a0b1c 0%, #3a0e26 50%, #4a1228 100%);
+    font-family: 'Montserrat', sans-serif;
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* --- BACKGROUND EFFECTS --- */
+.stars, .twinkling {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block;
+}
+.stars { background: transparent url('http://www.script-tutorials.com/demos/360/images/stars.png') repeat top center; z-index: -2; }
+.twinkling {
+    background: transparent url('http://www.script-tutorials.com/demos/360/images/twinkling.png') repeat top center;
+    z-index: -1; animation: move-twink-back 200s linear infinite; opacity: 0.4;
+}
+@keyframes move-twink-back { from {background-position:0 0;} to {background-position:-10000px 5000px;} }
+
+/* Fog effect for mystery (Tinted Pinkish) */
+.fog {
+    position: absolute; width: 300%; height: 300%;
+    background: radial-gradient(ellipse at center, rgba(255, 192, 203, 0.05) 0%, rgba(0,0,0,0) 70%);
+    animation: fog-move 20s infinite linear;
+    z-index: -1;
+}
+@keyframes fog-move { 0% { transform: translate(-50px, -50px); } 50% { transform: translate(50px, 50px); } 100% { transform: translate(-50px, -50px); } }
+
+
+/* --- CONTAINER --- */
+.container {
+    position: absolute; width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+    transition: opacity 1s ease-in-out;
+}
+
+/* --- THE FUTURE BUTTON --- */
+.future-btn {
+    padding: 25px 60px;
+    font-size: 1.5rem;
+    font-family: 'Cinzel', serif; /* Elegant font */
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 182, 193, 0.4); /* Pinkish Border */
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    /* Soft Pink Glow */
+    box-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+    backdrop-filter: blur(5px);
+}
+
+.future-btn .icon { display: block; font-size: 2rem; margin-bottom: 10px; }
+
+.future-btn:hover {
+    background: rgba(255, 105, 180, 0.2);
+    /* Stronger Pink Glow */
+    box-shadow: 0 0 50px rgba(255, 105, 180, 0.6);
+    transform: scale(1.05);
+    border-color: #fff;
+}
+
+/* --- THE MESSAGE --- */
+.message-wrapper {
+    text-align: center;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.line {
+    opacity: 0; /* Hidden initially */
+    transform: translateY(20px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.line-1 {
+    font-size: 1.5rem; color: #ffccd5; margin-bottom: 30px;
+}
+
+.line-2 {
+    font-size: 1.8rem; color: #fff0f5; margin-bottom: 40px;
+}
+
+.line-3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ff69b4; /* Pink */
+    text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+}
+
+/* Classes to trigger animations */
+.line.visible { opacity: 1; transform: translateY(0); }
+
+
+/* --- BACK BUTTON --- */
+.back-btn {
+    position: absolute; bottom: 50px; text-decoration: none; color: white;
+    background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 30px; border-radius: 30px;
+    font-size: 1rem; transition: 0.3s;
+}
+.back-btn:hover { background: white; color: black; }
+
+.hidden { display: none; opacity: 0; }
